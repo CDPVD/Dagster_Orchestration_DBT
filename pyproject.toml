@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "Dagster_Orchestration_DBT"
+version = "0.1.0"
+description = ""
+authors = ["Philippe Thériault <philippe.theriault@cssdhr.gouv.qc.ca>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = ">=3.10,<3.13"
+dbt-core = "1.8.9"
+pyodbc = "5.1.0"
+dbt-sqlserver = "1.8.5"
+dagster-dbt = "0.25.10"
+dagster-webserver = "1.9.10"
+snowflake = "1.12.0"
+snowflake-connector-python = {version = "4.4.0", extras = ["pandas"]}
+pandas = "2.3.3"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.dagster]
+module_name = "Dagster_Orchestration_DBT.definitions"
+code_location_name = "Dagster_Orchestration_DBT"
