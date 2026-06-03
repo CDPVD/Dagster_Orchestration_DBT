@@ -42,10 +42,22 @@ Permet de bypasser Fabric. Le fichier est disponible dans le projet Dagster et d
 ![alt text](doc_images\image-4.png)
 
 ### Variable d'environnement
-Pour fonctionner, Dagster a besoin d'une variable d'environnement qui se nomme DAGSTER_HOME
+Pour fonctionner, Dagster a besoin d'une variable d'environnement nommée `DAGSTER_HOME`.
 
-créer cette variable (selon votre OS). Le plus simple est de mettre le path du dossier DAGSTER comme valeur
-ex: DAGSTER_HOME=/home/theriaultp/Dagster_Orchestration_DBT
+- Linux :
+    + Ouvrir le fichier de configuration du shell : `nano ~/.bashrc`
+    + Ajouter la ligne suivante en adaptant le chemin à votre environnement :
+      `export DAGSTER_HOME="/home/theriaultp/Dagster_Orchestration_DBT"`
+    + Enregistrer le fichier puis recharger la configuration :
+      `source ~/.bashrc`
+
+- Windows :
+    + Ouvrir **Paramètres système avancés** puis **Variables d'environnement**.
+    + Dans **Variables utilisateur**, cliquer sur **Nouveau**.
+    + Renseigner :
+        - Nom de la variable : `DAGSTER_HOME`
+        - Valeur de la variable : `C:\Users\alluardj\10_projets\tbe\Dagster_Orchestration_DBT`
+    + Valider avec **OK**.
 
 ### Préparation des environnements Poetry
 #### Dans votre dossier CSS
