@@ -5,11 +5,12 @@ import pandas as pd
 from .dFondationConfigs import dfondation
 import configparser
 from datetime import datetime
+from pathlib import Path
 
 @dg.asset
 def dFondation():
     config = configparser.ConfigParser()
-    config.read('.\\Dagster_Orchestration_DBT\\globalConfigs.cfg')
+    config.read(Path(__file__).parent.joinpath("..","globalConfigs.cfg").resolve())
     dFondationSettings = config['dFondation']
     errorLogger = []
     if dFondationSettings.getboolean('enabled'):

@@ -3,8 +3,7 @@ from pathlib import Path
 from dagster_dbt import DbtProject
 
 config = configparser.ConfigParser()
-config.read('.\\Dagster_Orchestration_DBT\\globalConfigs.cfg')
-print(config)
+config.read(Path(__file__).parent.joinpath("globalConfigs.cfg").resolve())
 conf = config['base']
 
 CDPVD_project = DbtProject(
