@@ -14,5 +14,9 @@ class CDPVDDagsterDbtTranslator(DagsterDbtTranslator):
     dagster_dbt_translator=CDPVDDagsterDbtTranslator(),
     )
 def CDPVD_dbt_assets(context: AssetExecutionContext, cdpvd: DbtCliResource):
-    yield from cdpvd.cli(["run"], context=context).stream()
+    yield from cdpvd.cli(
+        ["build", "--target", "dev"],  # ou prod, staging...
+        context=context
+        ).stream()
 
+ 
