@@ -14,7 +14,7 @@ dfondation = {
         "schema": "AFFAIRES_SCOLAIRE",
         "tables": {
             "DIM_ELEVE" : "ELEVE_ID,CODE_UNIQUE_ELEVE,FICHE,CODE_PERMANENT",
-            "DIM_DOSSIER" : "ELEVE_ID,ANNEE,ECOLE_CODE,FICHE"
+            "DIM_DOSSIER" : "ELEVE_ID,ANNEE,ECOLE_CODE,FICHE,DOSSIER_ID"
         }
     }
 
