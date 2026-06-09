@@ -7,9 +7,9 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = ">=3.10,<3.13"
-dbt-core = "1.8.9"
-pyodbc = "5.1.0"
-dbt-sqlserver = "1.8.5"
+dbt-core = "~1.9"
+pyodbc = "5.2.0"
+dbt-fabric = { git = "https://git@github.com/Sciance-Inc/dbt-fabric.git", rev = "v0.19.5" }
 dagster-dbt = "0.25.10"
 dagster-webserver = "1.9.10"
 snowflake = "1.12.0"
