@@ -10,7 +10,7 @@ schedules = [
     build_schedule_from_dbt_selection(
          [CDPVD_dbt_assets],
          job_name="CDPVD_DAILY",
-         cron_schedule="15 5 * * *",
+         cron_schedule="15 8 * * *",
          dbt_select="fqn:*",
      ),
 
