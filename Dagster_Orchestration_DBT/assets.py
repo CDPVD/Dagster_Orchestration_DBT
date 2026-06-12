@@ -27,11 +27,11 @@ def CDPVD_dbt_assets(context: AssetExecutionContext, cdpvd: DbtCliResource):
     ).stream()
 
     yield from cdpvd.cli(
-        ["run", "--target", dbt_target],
+        ["run", "--target", dbt_target, "--exclude", "cdpvd_stg_absence_daily+"],
         context=context,
     ).stream()
 
     yield from cdpvd.cli(
-        ["test", "--target", dbt_target],
+        ["test", "--target", dbt_target, "--exclude", "cdpvd_stg_absence_daily+"],
         context=context,
     ).stream()
