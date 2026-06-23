@@ -13,5 +13,5 @@ def failure_alert(context: dg.RunFailureSensorContext):
             server = smtplib.SMTP(conf['smtp_server'], conf['smtp_server_port'])
             server.ehlo()
             email_message = f"Subject: Dagster erreur \n\n Le travail: {context.dagster_run.job_name} a echoue."
-            server.sendmail(conf['from'], conf['to'], email_message)
+            server.sendmail(conf['from'], [addr.strip() for addr in conf['to'].split(',')], email_message)
             server.quit()
